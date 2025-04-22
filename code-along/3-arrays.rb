@@ -12,8 +12,11 @@ p numbers
 mixed_stuff=["tacos",3,true]
 p mixed_stuff
 # Accessing the array
-
+puts foods[0]
 # Add to the array
+shopping_list= foods + ["eggs"]
+shopping_list1=shopping_list.push "beef"
+puts shopping_list1
 
 # There are lots of fun things you can do with arrays:
 # https://ruby-doc.org/core-2.7.0/Array.html
