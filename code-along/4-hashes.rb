@@ -13,4 +13,11 @@ profile["age"]=43
 profile["location"]={"city"=> "Chicago", "state"=> "IL"}
 city = profile["location"]["city"]
 puts city
+puts profile["zebra"]
 # More Complex Hashes
+profile["timeline"]= [
+    {"status" => "Teaching ENTR-451", "time"=> "8:30am"},
+    {"status" => "On my way home", "time"=> "11:30am"},
+    {"status" => "Back at my desk", "time"=> "12:30pm"},
+]
+p profile["timeline"][0]["status"]
