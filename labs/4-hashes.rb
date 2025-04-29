@@ -3,7 +3,7 @@
 # ----------------------
 require "net/http"
 require "json"
-url = "https://blockchain.info/ticker"
+url = "https://api.coindesk.com/v1/bpi/currentprice.json"
 uri = URI(url)
 response = Net::HTTP.get(uri)
 bitcoin_data = JSON.parse(response)
@@ -26,7 +26,6 @@ bitcoin_data = JSON.parse(response)
 # 1. Get input from a user using gets.chomp.
 puts "How much bitcoin do you have?"
 bitcoin = gets.chomp
-puts gets.chomp
 # 2. The value will be a string, so you'll want to convert it to a Float.
 bitcoin = bitcoin.to_f
 
@@ -34,7 +33,11 @@ bitcoin = bitcoin.to_f
 # puts bitcoin_data
 
 # extract current USD bitcoin rate
-bitcoin_rate = bitcoin_data["USD"]["last"]
-puts "1 Bitcoin is valued at #{bitcoin_rate} USD"
-value = bitcoin * bitcoin_rate
-puts "Your Bitcoin is worth #{value}"
+bitcoin_rate = bitcoin_data["bpi"]["USD"]["rate_float"]
+puts bitcoin_rate
+
+
+# "1 Bitcoin is valued at $#{bitcoin_rate} USD"
+# value = bitcoin * bitcoin_rate
+# puts "Your Bitcoin is worth $#{value}"
+
