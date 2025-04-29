@@ -37,5 +37,3 @@ elsif total == 2 || total == 3 || total == 12
     puts "YOU LOSE!"
 else puts "The point is #{total}"
 end
-
-if total==
